@@ -88,6 +88,34 @@ void postorder(NODE root)
  postorder(root->rchild);
  printf("%d\n",root->data);
 }
+int height(NODE root)
+{
+	int lht,rht;
+	if(root==NULL)
+		return 0;
+	else
+	{
+		lht=height(root->lchild);
+		rht=height(root->rchild);
+		if(lht>rht)
+			return (lht+1);
+		else 
+			return (rht+1);
+	}
+}
+
+void print(NODE root,int lev)
+{
+	if(root==NULL)
+		return;
+	if(lev==0)
+		printf("%d ",root->data);
+	else if(lev>0)
+	{
+		print(root->lchild,(lev-1));
+		print(root->rchild,(lev-1));
+	}
+}
 
  
 

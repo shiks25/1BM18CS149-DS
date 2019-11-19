@@ -13,6 +13,8 @@ void inorder(NODE root);
 void preorder(NODE root);
 void postorder(NODE root);
 void  display(NODE root);
+int height(NODE root);
+void print(NODE root,int lev);
 NODE getnode(int item)
 {
  NODE p;
@@ -48,6 +50,15 @@ int main()
 			break;
 		case 4:postorder(root);
 			break;
+		case 5:h=height(root);
+				
+				for(i=0;i<h;i++)
+				{	
+					print(root,i);
+					printf("\n");
+				}
+				break;
+		default:printf("invalid choice\n");
 		
 	}
 	printf("1.insert\n2.inorder\n3.preorder\n4.postorder\n-1.exit\n");

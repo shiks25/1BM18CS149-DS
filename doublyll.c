@@ -11,7 +11,7 @@ NODE insert_left(NODE head,int item,int value);
 void display(NODE head);
 NODE getnode();
 NODE insert_front(int item,NODE head);
-NODE delete_pos(NODE head,int value);
+NODE delete_value(NODE head,int value);
 int main()
 {
 	NODE head=NULL;
@@ -33,7 +33,7 @@ int main()
 			break;
 		case 3:printf("enter the value\n");
 	 		scanf("%d",&p);
-			head=delete_pos(head,p);
+			head=delete_value(head,p);
 			break;
 		case 4:display(head);
 			break;
@@ -44,14 +44,14 @@ int main()
 }
 return 0;
 }
-NODE delete_pos(NODE head,int value)
+NODE delete_value(NODE head,int value)
 {
 	NODE curr=head,prev,q,p;
 	NODE n=NULL;
 	int item;
 	if(head==NULL)
 	{
-		printf("empty");
+		printf("List is empty\n");
 		return head;
 	}
 	if(head->next==NULL)
@@ -101,7 +101,7 @@ NODE delete_pos(NODE head,int value)
 	printf("deleted ele is %d\n",item);
 	if(curr==NULL)
 	{
-		printf("invalid position");
+		printf("value doesnt exist\n");
 		return head;
 	}
 	return 0;
@@ -117,7 +117,7 @@ void display(NODE head)
 		exit(0);
 	}
 	p=head;
-	printf("contents of list=\n");
+	printf("contents of list are \n");
 	while(p!=NULL)
 	{
 		printf("%d\n",p->data);
@@ -195,7 +195,7 @@ NODE insert_left(NODE head,int item,int value)
 	}
 	if(flag==0)
 	{
-		printf("value is not found in list\n");
+		printf("value not found\n");
 		return head;
 	}
 

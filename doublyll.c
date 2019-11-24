@@ -17,7 +17,7 @@ int main()
 	NODE head=NULL;
 	int n,ele,p,i,value;
 	int c,j;
-	printf("Enter 1. insert front\n 2.insert left\n3. delete at position\n 4. display");
+	printf("Enter 1. insert front\n 2.insert left\n3. delete a value\n 4. display");
 	scanf("%d",&n);
 	while(n!=0)
 	{
@@ -31,7 +31,7 @@ int main()
 	 		scanf("%d%d",&ele,&value);
 			head=insert_left(head,ele,value);
 			break;
-		case 3:printf("enter the value\n");
+		case 3:printf("enter the value to be deleted\n");
 	 		scanf("%d",&p);
 			head=delete_value(head,p);
 			break;
@@ -63,7 +63,7 @@ NODE delete_value(NODE head,int value)
 		}
 		else
 		{
-			printf("invalid position\n");
+			printf("value not found\n");
 			return head;
 		}	
 	}

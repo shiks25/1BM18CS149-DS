@@ -80,11 +80,11 @@ int main()
 		switch(ch)
 		{
 			case 1:
- 				                         printf("enter the item\n");                                                        
-                                                                                    scanf("%d",&item);
-				                           head=push(item,head,&count,size);
-                                                                                    count++;
-                                                                                     break;
+ 				  printf("enter the item\n");                                                        
+                                          scanf("%d",&item);
+				   head=push(item,head,&count,size);
+                                          count++;
+                                    break;
 			case 2:head=pop(head);
 				break;
 			case 3:display(head);
